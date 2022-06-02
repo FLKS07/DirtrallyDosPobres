@@ -51,31 +51,21 @@ public class CarController : MonoBehaviour
     private float acelerationForpause;
     private float MaxSpeedDefault;
     private Rigidbody2D rb;
-    private float boostDefaultACC;
+    
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SR = GetComponent<SpriteRenderer>();
+        SR = GetComponent<SpriteRenderer>(); // Componentes
         acelerationForpause = acc;
         MaxSpeedDefault = MaxSpeed;
         CurrentScene = SceneManager.GetActiveScene();
-        boostDefaultACC = acc;
-        gameIsPaused = false;
-        skinID = 0;
-        Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-       
-       
-        
-        
         textMeshPro.text = lapsNumber.ToString();
-
 
         X = Input.GetAxis("Horizontal");
         Y = Input.GetAxis("Vertical");
@@ -270,6 +260,14 @@ public class CarController : MonoBehaviour
         {
             SR.sprite = ImageSkin[skinID];
         }
+        if (skinID < 0)
+        {
+            skinID = 0;
+        }
+        if (skinID > 0)
+        {
+            skinID = 0;
+        }
     }
 
     IEnumerator boostDeactiveter()
@@ -281,7 +279,7 @@ public class CarController : MonoBehaviour
         yield return new WaitForSeconds(boostTime);
         boostActive = false;
         MaxSpeed = MaxSpeedDefault;
-        acc = boostDefaultACC;
+        acc = acelerationForpause;
     }
 
     IEnumerator CountdownForBoost()

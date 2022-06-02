@@ -12,6 +12,7 @@ public class ButtonController : MonoBehaviour
     public void ButtonStartForMenu()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
     public void Level1()
     {
