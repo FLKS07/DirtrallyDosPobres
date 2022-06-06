@@ -220,9 +220,6 @@ public class CarController : MonoBehaviour
                 CheckPoint6 = true;
             }
         }
-
-
-
     }
 
     void pausefunction()
