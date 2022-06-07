@@ -5209,6 +5209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1251141954788675781, guid: 5a2a105b31ce64a458942279f372cf2b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3068045663464478664, guid: 5a2a105b31ce64a458942279f372cf2b, type: 3}
       propertyPath: m_Radius
       value: 3.3860164
