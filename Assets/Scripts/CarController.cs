@@ -25,16 +25,18 @@ public class CarController : MonoBehaviour
     float Y;
 
     [Header("Checkpoints")]
+    public bool StartCheckpoint;
     public bool CheckPoint1;
     public bool CheckPoint2;
     public bool CheckPoint3;
-    public bool StartCheckpoint;
-    public int lapsNumber;
-    public TextMeshProUGUI textMeshPro;
-    private Scene CurrentScene;
     public bool CheckPoint4;
     public bool CheckPoint5;
     public bool CheckPoint6;
+    
+    public int lapsNumber;
+    public TextMeshProUGUI textMeshPro;
+    private Scene CurrentScene;
+    
 
     [Header("Nivel4")]
     public GameObject Border1;
@@ -42,6 +44,10 @@ public class CarController : MonoBehaviour
 
     public GameObject Bridge1;
     public GameObject Bridge2;
+
+    public GameObject Barrier1;
+    public GameObject Barrier2;
+
     public bool isAbove;
 
 
@@ -169,7 +175,7 @@ public class CarController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bridgeColiderActive();
+        
         if(CurrentScene.name == "Nivel2")
         {
             if (collision.tag == "StartCheckpoint")
@@ -242,6 +248,7 @@ public class CarController : MonoBehaviour
         }
         if(CurrentScene.name == "Nivel4")
         {
+            bridgeColiderActive();
             if (collision.tag == "StartCheckpoint")
             {
                 StartCheckpoint = true;
@@ -258,11 +265,15 @@ public class CarController : MonoBehaviour
             }
             if (collision.tag == "CheckPoint 3" && CheckPoint2 == true)
             {
+                Barrier2.SetActive(false);
+                Barrier1.SetActive(true);
                 CheckPoint3 = true;
                 SR.sortingOrder = 11;
             }
             if (collision.tag == "CheckPoint4" && CheckPoint3 == true)
             {
+                Barrier2.SetActive(true);
+                Barrier1.SetActive(false);
                 isAbove = false;
                 CheckPoint4 = true;
                 SR.sortingOrder = 5;
@@ -302,26 +313,12 @@ public class CarController : MonoBehaviour
     public void SkinChanger()
     {
         skinID = skinID + 1;
-        if(skinID == 2)
+        if (skinID > 1)
         {
             skinID = 0;
         }
-        if(skinID == 0)
-        {
-            SR.sprite = ImageSkin[skinID];
-        }
-        if (skinID == 1)
-        {
-            SR.sprite = ImageSkin[skinID];
-        }
-        if (skinID < 0)
-        {
-            skinID = 0;
-        }
-        if (skinID > 0)
-        {
-            skinID = 0;
-        }
+        SR.sprite = ImageSkin[skinID];
+        
     }
 
     IEnumerator boostDeactiveter()

@@ -26,6 +26,10 @@ public class ButtonController : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel3");
     }
+    public void Level4()
+    {
+        SceneManager.LoadScene("Nivel4");
+    }
     public void ExitgGme()
     {
         Application.Quit();
