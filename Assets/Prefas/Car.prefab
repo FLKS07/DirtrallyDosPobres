@@ -101,22 +101,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 15
   acc: 3000
-  steering: 500
+  steering: 400
   boostTime: 3
   boostActive: 0
   boostMaxSpeed: 25
   boostMaxACC: 5000
   BoostCountDown: {fileID: 0}
   BoostCountINT: 2
+  StartCheckpoint: 0
   CheckPoint1: 0
   CheckPoint2: 0
   CheckPoint3: 0
-  StartCheckpoint: 0
-  lapsNumber: 0
-  textMeshPro: {fileID: 0}
   CheckPoint4: 0
   CheckPoint5: 0
   CheckPoint6: 0
+  lapsNumber: 0
+  textMeshPro: {fileID: 0}
+  Border1: {fileID: 0}
+  Border2: {fileID: 0}
+  Bridge1: {fileID: 0}
+  Bridge2: {fileID: 0}
+  Barrier1: {fileID: 0}
+  Barrier2: {fileID: 0}
+  isAbove: 0
   gameIsPaused: 0
   pausedPanel: {fileID: 0}
   VolumeSlider: {fileID: 0}
