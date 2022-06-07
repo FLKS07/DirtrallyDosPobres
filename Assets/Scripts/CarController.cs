@@ -36,6 +36,15 @@ public class CarController : MonoBehaviour
     public bool CheckPoint5;
     public bool CheckPoint6;
 
+    [Header("Nivel4")]
+    public GameObject Border1;
+    public GameObject Border2;
+
+    public GameObject Bridge1;
+    public GameObject Bridge2;
+    public bool isAbove;
+
+
     [Header("Pause Thing")]
     public bool gameIsPaused;
     public GameObject pausedPanel;
@@ -124,6 +133,20 @@ public class CarController : MonoBehaviour
                 StartCheckpoint = false;
             }
         }
+        if(CurrentScene.name == "Nivel4")
+        {
+            if(StartCheckpoint == true && CheckPoint1 == true && CheckPoint2 == true && CheckPoint3 == true && CheckPoint4 == true && CheckPoint5 == true && CheckPoint6 == true )
+            {
+                lapsNumber++;
+                StartCheckpoint = false;
+                CheckPoint1 = false;
+                CheckPoint2 = false;
+                CheckPoint3 = false;
+                CheckPoint4 = false;
+                CheckPoint5 = false;
+                CheckPoint6 = false;
+            }
+        }
 
         if(lapsNumber == 69)
         {
@@ -141,15 +164,12 @@ public class CarController : MonoBehaviour
         {
             pausefunction();
         }
-
-        
-
-
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        bridgeColiderActive();
         if(CurrentScene.name == "Nivel2")
         {
             if (collision.tag == "StartCheckpoint")
@@ -210,6 +230,43 @@ public class CarController : MonoBehaviour
             if (collision.tag == "CheckPoint4" && CheckPoint3 == true)
             {
                 CheckPoint4 = true;
+            }
+            if (collision.tag == "CheckPoint5" && CheckPoint4 == true)
+            {
+                CheckPoint5 = true;
+            }
+            if (collision.tag == "CheckPoint6" && CheckPoint5 == true)
+            {
+                CheckPoint6 = true;
+            }
+        }
+        if(CurrentScene.name == "Nivel4")
+        {
+            if (collision.tag == "StartCheckpoint")
+            {
+                StartCheckpoint = true;
+            }
+            if (collision.tag == "CheckPoint 1" && StartCheckpoint == true)
+            {
+                CheckPoint1 = true;
+                isAbove = false;
+            }
+            if (collision.tag == "CheckPoint 2" && CheckPoint1 == true)
+            {
+                CheckPoint2 = true;
+                isAbove = true;
+            }
+            if (collision.tag == "CheckPoint 3" && CheckPoint2 == true)
+            {
+                CheckPoint3 = true;
+                SR.sortingOrder = 11;
+            }
+            if (collision.tag == "CheckPoint4" && CheckPoint3 == true)
+            {
+                isAbove = false;
+                CheckPoint4 = true;
+                SR.sortingOrder = 5;
+                bridgeColiderActive();
             }
             if (collision.tag == "CheckPoint5" && CheckPoint4 == true)
             {
@@ -292,7 +349,26 @@ public class CarController : MonoBehaviour
                 break;
             }
         }
-        
-        
+    }
+
+    void bridgeColiderActive()
+    {
+        if(isAbove == true)
+        {
+            Border1.SetActive(true);
+            Border2.SetActive(true);
+
+            Bridge1.SetActive(false);
+            Bridge2.SetActive(false);
+
+        }
+        if(isAbove == false)
+        {
+            Bridge1.SetActive(true);
+            Bridge2.SetActive(true);
+
+            Border1.SetActive(false);
+            Border2.SetActive(false);
+        }
     }
 }
