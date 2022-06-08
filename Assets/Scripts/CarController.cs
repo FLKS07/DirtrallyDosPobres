@@ -63,6 +63,17 @@ public class CarController : MonoBehaviour
     private SpriteRenderer SR;
     public int skinID;
 
+    [Header("Stopwatch")]
+    public float stopwatchTime;
+    public bool stopWatchPause;
+    public bool stopWatchStop;
+    public bool stopWatchReset;
+    public TextMeshProUGUI stopWatchTimer;
+
+
+    // // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+
     private float acelerationForpause;
     private float MaxSpeedDefault;
     private Rigidbody2D rb;
@@ -170,8 +181,11 @@ public class CarController : MonoBehaviour
         {
             pausefunction();
         }
+
+        StopWatch();
     }
 
+    #region Triggers
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -252,6 +266,7 @@ public class CarController : MonoBehaviour
             if (collision.tag == "StartCheckpoint")
             {
                 StartCheckpoint = true;
+                stopWatchReset = true;
             }
             if (collision.tag == "CheckPoint 1" && StartCheckpoint == true)
             {
@@ -290,6 +305,10 @@ public class CarController : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Functions
+
     void pausefunction()
     {
         if(gameIsPaused == false)
@@ -299,9 +318,11 @@ public class CarController : MonoBehaviour
             gameIsPaused =true;
             Debug.Log(gameIsPaused);
             acc = 0f;
+            stopWatchPause = true;
         }
         else if(gameIsPaused == true)
         {
+            stopWatchPause = false;
             pausedPanel.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
@@ -368,4 +389,31 @@ public class CarController : MonoBehaviour
             Border2.SetActive(false);
         }
     }
+
+    void StopWatch()
+    {
+        
+        int minutes = Mathf.FloorToInt(stopwatchTime / 60);
+        int seconds = Mathf.FloorToInt(stopwatchTime - minutes * 60);
+
+        if (stopWatchPause == false)
+        {
+            
+            stopwatchTime = stopwatchTime + Time.deltaTime;
+            stopWatchTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+        else if (stopWatchPause == true)
+        {
+            stopWatchTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+        if(stopWatchReset == true)
+        {
+            stopwatchTime = 0;
+            stopWatchReset = false;
+        }
+    }
+
+    #endregion
+
 }
