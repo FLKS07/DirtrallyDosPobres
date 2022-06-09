@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 71
+  controlID: 84
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 81
+  controlID: 89
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 82
+  controlID: 90
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,13 +317,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\Fl\xE1vio\\Documents\\Code Up\\Unity Projects\\Dirt
     rally dos pobres"
@@ -331,9 +331,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 26530000
-    m_LastClickedID: 21286
-    m_ExpandedIDs: 00000000ae520000b0520000b2520000b4520000b6520000b8520000ba520000bc520000
+    m_SelectedIDs: a4550000
+    m_LastClickedID: 21924
+    m_ExpandedIDs: 00000000825500008455000086550000885500008a5500008c5500008e55000090550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae520000b0520000b2520000b4520000b6520000b8520000ba520000bc520000
+    m_ExpandedIDs: 00000000825500008455000086550000885500008a5500008c5500008e55000090550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -489,9 +489,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 52d9ffff9ad9fffff4dcffff44deffffe0deffff3ce0ffff40e0fffff0e1ffff38e2ffff92e5ffffe2e6ffff7ee7ffffdae8ffffdee8ffff4eecffff1aefffff46f3ffffd6f5ffffeaf7ffff02fbffff207500003c770000
+      m_SelectedIDs: a0faffff
+      m_LastClickedID: -1376
+      m_ExpandedIDs: 84f1ffff84f6ffffc0f9ffff2cfbfffff8520000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -762,9 +762,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -10.150403, y: 0.5909105, z: -0.46179685}
+    m_Target: {x: 1.565156, y: 2.2341454, z: 173.7028}
     speed: 2
-    m_Value: {x: -11.409006, y: 1.5200802, z: -0.47626913}
+    m_Value: {x: 1.565156, y: 2.2341454, z: 173.7028}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -815,9 +815,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 30.713919
+    m_Target: 4.247585
     speed: 2
-    m_Value: 32.16117
+    m_Value: 4.247585
   m_Ortho:
     m_Target: 1
     speed: 2

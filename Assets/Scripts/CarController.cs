@@ -70,6 +70,14 @@ public class CarController : MonoBehaviour
     public bool stopWatchReset;
     public TextMeshProUGUI stopWatchTimer;
 
+    [Header("Second Watchtime")]
+    public float secondstopWatchTime;
+    public bool secondstopWatchPause;
+    public TextMeshProUGUI secondStopWatchTimer;
+
+
+
+
 
     // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
@@ -396,9 +404,14 @@ public class CarController : MonoBehaviour
         int minutes = Mathf.FloorToInt(stopwatchTime / 60);
         int seconds = Mathf.FloorToInt(stopwatchTime - minutes * 60);
 
+        int seconminutes = Mathf.FloorToInt(secondstopWatchTime / 60);
+        int secseconds = Mathf.FloorToInt(secondstopWatchTime - seconminutes * 60);
+
+
+
+         //1st StopWatch
         if (stopWatchPause == false)
-        {
-            
+        { 
             stopwatchTime = stopwatchTime + Time.deltaTime;
             stopWatchTimer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
@@ -412,7 +425,15 @@ public class CarController : MonoBehaviour
             stopwatchTime = 0;
             stopWatchReset = false;
         }
+
+        //2st StopWatch
+        if (secondstopWatchPause == false)
+        {
+            secondstopWatchTime = secondstopWatchTime + Time.deltaTime;
+            secondStopWatchTimer.text = string.Format("{0:00}:{1:00}", seconminutes, secseconds);
+        }
     }
+
 
     #endregion
 
