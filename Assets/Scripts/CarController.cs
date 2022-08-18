@@ -21,8 +21,8 @@ public class CarController : MonoBehaviour
 
 
 
-    float X;
-    float Y;
+    public float X;
+    public float Y;
 
     [Header("Checkpoints")]
     public bool StartCheckpoint;
@@ -76,9 +76,6 @@ public class CarController : MonoBehaviour
     public TextMeshProUGUI secondStopWatchTimer;
 
 
-
-
-
     // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
 
@@ -101,9 +98,14 @@ public class CarController : MonoBehaviour
     {
         textMeshPro.text = lapsNumber.ToString();
 
+        
+        
         X = Input.GetAxis("Horizontal");
         Y = Input.GetAxis("Vertical");
+        
+        
 
+        Y = Input.GetAxis("Vertical");
         Vector2 Speed = transform.up*(Y * acc);
         rb.AddForce(Speed * Time.deltaTime);
 
@@ -191,6 +193,7 @@ public class CarController : MonoBehaviour
         }
 
         StopWatch();
+        
     }
 
     #region Triggers
@@ -203,6 +206,7 @@ public class CarController : MonoBehaviour
             if (collision.tag == "StartCheckpoint")
             {
                 StartCheckpoint = true;
+                stopWatchReset = true;
             }
             if (collision.tag == "CheckPoint 1" && StartCheckpoint == true)
             {
@@ -242,6 +246,7 @@ public class CarController : MonoBehaviour
             if (collision.tag == "StartCheckpoint")
             {
                 StartCheckpoint = true;
+                stopWatchReset = true;
             }
             if (collision.tag == "CheckPoint 1" && StartCheckpoint == true)
             {
@@ -433,8 +438,6 @@ public class CarController : MonoBehaviour
             secondStopWatchTimer.text = string.Format("{0:00}:{1:00}", seconminutes, secseconds);
         }
     }
-
-
     #endregion
 
 }

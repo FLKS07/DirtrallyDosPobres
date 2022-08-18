@@ -132,6 +132,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fc5bc29727f11df428172fb845a1032f, type: 3}
   - {fileID: 21300000, guid: 13532602d590ce244a06e6f439368599, type: 3}
   skinID: 0
+  stopwatchTime: 0
+  stopWatchPause: 0
+  stopWatchStop: 0
+  stopWatchReset: 0
+  stopWatchTimer: {fileID: 0}
+  secondstopWatchTime: 0
+  secondstopWatchPause: 0
+  secondStopWatchTimer: {fileID: 0}
 --- !u!50 &1996613004113403058
 Rigidbody2D:
   serializedVersion: 4

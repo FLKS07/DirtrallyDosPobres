@@ -1456,8 +1456,34 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8985372365250003844, guid: 74849408f74b3364baa0f5cafe05caa4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37.399994
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74849408f74b3364baa0f5cafe05caa4, type: 3}
+--- !u!114 &682816617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3863127370825689716, guid: 74849408f74b3364baa0f5cafe05caa4, type: 3}
+  m_PrefabInstance: {fileID: 682816616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &682816618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1233341395953120624, guid: 74849408f74b3364baa0f5cafe05caa4, type: 3}
+  m_PrefabInstance: {fileID: 682816616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &683604465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6618708858903674683, guid: 5a2a105b31ce64a458942279f372cf2b, type: 3}
@@ -4170,6 +4196,14 @@ PrefabInstance:
       propertyPath: VolumeSlider
       value: 
       objectReference: {fileID: 1342039692}
+    - target: {fileID: 1996613004113403071, guid: 855ad5c74deafff4e97831c42ab93250, type: 3}
+      propertyPath: stopWatchTimer
+      value: 
+      objectReference: {fileID: 682816618}
+    - target: {fileID: 1996613004113403071, guid: 855ad5c74deafff4e97831c42ab93250, type: 3}
+      propertyPath: secondStopWatchTimer
+      value: 
+      objectReference: {fileID: 682816617}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855ad5c74deafff4e97831c42ab93250, type: 3}
 --- !u!1001 &2051372225
